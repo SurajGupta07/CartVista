@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+import { BaseLayout } from '../../components/BaseLayout/BaseLayout';
 
 export const More: React.FC = () => {
   return (
-    <View>
+    <BaseLayout>
       <Text>More</Text>
-    </View>
+    </BaseLayout>
   );
 };

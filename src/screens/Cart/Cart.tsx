@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+import { BaseLayout } from '../../components/BaseLayout/BaseLayout';
 
 export const Cart: FC = () => {
   return (
-    <View>
+    <BaseLayout>
       <Text>Cart Screen</Text>
-    </View>
+    </BaseLayout>
   );
 };
