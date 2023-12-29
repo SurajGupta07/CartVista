@@ -15,8 +15,9 @@ const renderTabBarIcon = (assetSrc: string) => () =>
   (
     <SVGImage
       assetSrc={assetSrc}
-      width={dimensions.viewWidth(35)}
-      height={dimensions.viewWidth(35)}
+      width={dimensions.viewWidth(24)}
+      height={dimensions.viewWidth(24)}
+      fill={theme.palette.white.dark}
     />
   );
 
@@ -47,7 +48,8 @@ export const AppTabs: FC = () => {
       minHeight: dimensions.viewHeight(89),
       backgroundColor: theme.palette.stale.light,
       borderRadius: 30,
-      paddingBottom: dimensions.viewHeight(8),
+      paddingTop: dimensions.viewHeight(17),
+      paddingBottom: dimensions.viewHeight(31),
       borderColor: theme.palette.stale.light,
     },
   };

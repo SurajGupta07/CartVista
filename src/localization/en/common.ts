@@ -1,4 +1,5 @@
 export default {
+  username: 'Hey, Rahul',
   details: 'Details',
   home: 'Home',
   more: 'More',
@@ -6,4 +7,5 @@ export default {
   category: 'Category',
   cart: 'Cart',
   change_language: 'Change Language',
+  search: 'Search Products or store',
 };

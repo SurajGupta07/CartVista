@@ -21,7 +21,7 @@ export const palette: IPalette = {
   },
   secondary: {
     dark: '#2A4BA0',
-    medium: '#2A4BA0',
+    medium: '#153075',
     light: '#2A4BA0',
   },
   white: {

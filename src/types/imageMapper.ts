@@ -4,6 +4,7 @@ import category from '../assets/images/category.svg';
 import heart from '../assets/images/heart.svg';
 import home from '../assets/images/home.svg';
 import more from '../assets/images/more.svg';
+import search from '../assets/images/search.svg';
 
 export const APP_IMAGES = {
   HOME: home,
@@ -12,4 +13,5 @@ export const APP_IMAGES = {
   CATEGORY: category,
   CART: cart,
   BACK: back,
+  SEARCH: search,
 };

@@ -6,6 +6,7 @@ import dimensions from '../../utils/dimensions';
 import { SVGImage } from '../SVGImage/SvgImage';
 import { styles } from './styles';
 import { IHeaderProps } from './types';
+import { theme } from '../../themes';
 
 export const Header: React.FC<IHeaderProps> = props => {
   const { title, onPress, headerColor, titleColor } = props;
@@ -23,8 +24,9 @@ export const Header: React.FC<IHeaderProps> = props => {
       <Text style={[styles.title, { color: titleColor }]}>{title}</Text>
       <SVGImage
         assetSrc={APP_IMAGES.CART}
-        height={dimensions.viewHeight(18)}
-        width={dimensions.viewWidth(16)}
+        height={dimensions.viewHeight(24)}
+        width={dimensions.viewWidth(24)}
+        fill={theme.palette.secondary.dark}
       />
     </View>
   );
