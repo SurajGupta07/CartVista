@@ -10,6 +10,7 @@ export interface IPalette {
   white: IColor;
   grey: IColor;
   black: IColor;
+  stale: IColor;
 }
 
 export const palette: IPalette = {
@@ -37,5 +38,10 @@ export const palette: IPalette = {
     dark: '#000000',
     medium: '#1E222B',
     light: '#3E4554',
+  },
+  stale: {
+    dark: '#F8F7FB',
+    medium: '#F8F7FB',
+    light: '#F8F7FB',
   },
 };
