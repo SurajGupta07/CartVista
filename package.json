@@ -20,7 +20,9 @@
     "react-native-responsive-fontsize": "^0.5.1",
     "react-native-svg": "^14.1.0",
     "i18next": "^23.7.11",
-    "react-i18next": "^14.0.0"
+    "react-i18next": "^14.0.0",
+    "axios": "0.27.2",
+    "@react-native-community/netinfo": "9.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

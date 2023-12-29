@@ -8,4 +8,17 @@ enum APPROUTES {
   HOMESTACK = 'HomeStack',
 }
 
-export { APPROUTES };
+enum EReqMethod {
+  GET = 'GET',
+  POST = 'POST',
+  PUT = 'PUT',
+  DELETE = 'DELETE',
+  PATCH = 'PATCH',
+}
+
+enum CONSTANTS {
+  GENERIC_ERR_MSG = 'Something Went Wrong!!',
+  SERVER_RESOURCE_NOT_FOUND = 'System under maintenance!',
+}
+
+export { APPROUTES, EReqMethod, CONSTANTS };
