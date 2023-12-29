@@ -5,26 +5,24 @@ const baseHeight = dimensions.screenHeight;
 
 export interface ITypography {
   fontSize: {
-    tiny: number;
-    normal: number;
-    small: number;
-    medium: number;
-    average: number;
-    big: number;
-    title: number;
-    hero: number;
+    headingBold: number;
+    headingSemiBold: number;
+    headingMedium: number;
+    headingRegular: number;
+    bodyBold: number;
+    bodyMedium: number;
+    label: number;
   };
 }
 
 export const fontSize = {
-  tiny: Number(RFValue(10, baseHeight).toFixed(2)),
-  small: Number(RFValue(12, baseHeight).toFixed(2)),
-  normal: Number(RFValue(14, baseHeight).toFixed(2)),
-  medium: Number(RFValue(16, baseHeight).toFixed(2)),
-  average: Number(RFValue(18, baseHeight).toFixed(2)),
-  big: Number(RFValue(20, baseHeight).toFixed(2)),
-  title: Number(RFValue(22, baseHeight).toFixed(2)),
-  hero: Number(RFValue(40, baseHeight).toFixed(2)),
+  headingBold: Number(RFValue(30, baseHeight).toFixed(2)),
+  headingSemiBold: Number(RFValue(26, baseHeight).toFixed(2)),
+  headingMedium: Number(RFValue(20, baseHeight).toFixed(2)),
+  headingRegular: Number(RFValue(18, baseHeight).toFixed(2)),
+  bodyBold: Number(RFValue(16, baseHeight).toFixed(2)),
+  bodyMedium: Number(RFValue(14, baseHeight).toFixed(2)),
+  label: Number(RFValue(12, baseHeight).toFixed(2)),
 };
 
 export const typography: ITypography = {
