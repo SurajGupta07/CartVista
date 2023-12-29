@@ -5,9 +5,9 @@ import { APPROUTES } from '../../constants/enums';
 import { NavigationParams } from '../../types/types';
 import { THome } from './types';
 import { styles } from './styles';
-import { BaseLayout } from '../../components/BaseLayout/BaseLayout';
+import { BaseLayout } from '../../components';
 
-export const Home: React.FC<THome> = () => {
+const Home: React.FC<THome> = () => {
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
   return (
     <BaseLayout style={styles.container}>
@@ -19,3 +19,5 @@ export const Home: React.FC<THome> = () => {
     </BaseLayout>
   );
 };
+
+export default React.memo(Home);

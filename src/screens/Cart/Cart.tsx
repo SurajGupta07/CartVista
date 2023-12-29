@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Text } from 'react-native';
-import { BaseLayout } from '../../components/BaseLayout/BaseLayout';
+import { BaseLayout } from '../../components';
 
 export const Cart: FC = () => {
   return (
@@ -9,3 +9,5 @@ export const Cart: FC = () => {
     </BaseLayout>
   );
 };
+
+export default React.memo(Cart);

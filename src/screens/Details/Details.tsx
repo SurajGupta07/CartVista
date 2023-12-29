@@ -1,11 +1,13 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { BaseLayout } from '../../components/BaseLayout/BaseLayout';
+import { BaseLayout } from '../../components';
 
-export const Details: React.FC = () => {
+const Details: React.FC = () => {
   return (
     <BaseLayout>
       <Text>Details</Text>
     </BaseLayout>
   );
 };
+
+export default React.memo(Details);

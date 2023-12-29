@@ -1,8 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { FC } from 'react';
 import { APPROUTES } from '../constants/enums';
-import { Details } from '../screens/Details/Details';
-import { Home } from '../screens/Home/Home';
+import { Details, Home } from '../screens';
 import { NavigationParams } from '../types/types';
 
 const Stack = createNativeStackNavigator<NavigationParams>();

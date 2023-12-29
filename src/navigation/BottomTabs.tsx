@@ -1,9 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { FC } from 'react';
 import { APPROUTES } from '../constants/enums';
-import { Categories } from '../screens/Categories/Categories';
-import { Favourite } from '../screens/Favourite/Favourite';
-import { More } from '../screens/More/More';
+import { Categories, Favourite, More } from '../screens';
 import { NavigationParams } from '../types/types';
 import { HomeStack } from './AppStack';
 
