@@ -5,6 +5,7 @@ import heart from '../assets/images/heart.svg';
 import home from '../assets/images/home.svg';
 import more from '../assets/images/more.svg';
 import search from '../assets/images/search.svg';
+import drop from '../assets/images/drop.svg';
 
 export const APP_IMAGES = {
   HOME: home,
@@ -14,4 +15,5 @@ export const APP_IMAGES = {
   CART: cart,
   BACK: back,
   SEARCH: search,
+  DROP_ARROW: drop,
 };

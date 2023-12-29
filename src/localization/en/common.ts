@@ -8,4 +8,8 @@ export default {
   cart: 'Cart',
   change_language: 'Change Language',
   search: 'Search Products or store',
+  delivery: 'DELIVERY TO',
+  address: 'Green Way 3000, Sylhet',
+  within: 'WITHIN',
+  hour: '1 Hour',
 };

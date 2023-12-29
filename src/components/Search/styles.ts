@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     paddingVertical: dimensions.viewHeight(8),
     paddingHorizontal: dimensions.viewWidth(12),
     fontFamily: theme.typography.fontFamily[500],
-    fontSize: theme.typography.fontSize.headingMedium,
+    fontSize: theme.typography.fontSize.bodyMedium,
   },
   searchIcon: {
     position: 'absolute',
@@ -26,16 +26,19 @@ export const styles = StyleSheet.create({
   },
   clearButton: {
     position: 'absolute',
-    right: dimensions.viewWidth(10),
-    zIndex: 2,
+    right: -dimensions.viewWidth(80),
   },
   inputBarText: {
     color: theme.palette.white.dark,
     paddingVertical: dimensions.viewHeight(8),
     fontFamily: theme.typography.fontFamily[500],
-    fontSize: theme.typography.fontSize.headingMedium,
+    fontSize: theme.typography.fontSize.bodyMedium,
     paddingLeft: dimensions.viewWidth(12),
     left: dimensions.viewWidth(36),
-    lineHeight: dimensions.viewHeight(24),
+  },
+  cross: {
+    color: theme.palette.white.dark,
+    fontFamily: theme.typography.fontFamily[500],
+    fontSize: theme.typography.fontSize.bodyMedium,
   },
 });

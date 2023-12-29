@@ -46,7 +46,7 @@ export const SearchBar = () => {
               autoFocus
             />
             <Pressable style={styles.clearButton} onPress={clearInput}>
-              <Text>X</Text>
+              <Text style={styles.cross}>X</Text>
             </Pressable>
           </View>
         }
