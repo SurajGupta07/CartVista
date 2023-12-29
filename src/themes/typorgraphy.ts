@@ -13,6 +13,12 @@ export interface ITypography {
     bodyMedium: number;
     label: number;
   };
+  fontFamily: {
+    '700': string;
+    '600': string;
+    '500': string;
+    '400': string;
+  };
 }
 
 export const fontSize = {
@@ -25,6 +31,14 @@ export const fontSize = {
   label: Number(RFValue(12, baseHeight).toFixed(2)),
 };
 
+const fontFamily = {
+  '700': 'Manrope-Bold',
+  '600': 'Manrope-SemiBold',
+  '500': 'Manrope-Medium',
+  '400': 'Manrope-Regular',
+};
+
 export const typography: ITypography = {
   fontSize,
+  fontFamily,
 };
