@@ -56,10 +56,10 @@ User Color Palette user `src/themes/palette.ts` for reference
 
 | Color          | Hex                                                              |
 | -------------- | ---------------------------------------------------------------- |
-| Primary Dark   | ![#F9B023](https://via.placeholder.com/10/F94464?text=+) #F9B023 |
-| Secondary Dark | ![#2A4BA0](https://via.placeholder.com/10/787878?text=+) #2A4BA0 |
-| Grey Dark      | ![#8891A5](https://via.placeholder.com/10/1FA73D?text=+) #8891A5 |
-| Stale Dark     | ![#F8F7FB](https://via.placeholder.com/10/991B1B?text=+) #F8F7FB |
+| Primary Dark   | ![#F9B023](https://via.placeholder.com/10/F9B023?text=+) #F9B023 |
+| Secondary Dark | ![#2A4BA0](https://via.placeholder.com/10/2A4BA0?text=+) #2A4BA0 |
+| Grey Dark      | ![#8891A5](https://via.placeholder.com/10/8891A5?text=+) #8891A5 |
+| Stale Dark     | ![#F8F7FB](https://via.placeholder.com/10/F8F7FB?text=+) #F8F7FB |
 
 ```
 Usage -> color: theme.palette.primary.dark
