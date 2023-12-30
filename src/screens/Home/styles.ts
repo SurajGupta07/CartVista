@@ -36,4 +36,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  listContainer: {
+    marginVertical: dimensions.viewHeight(12),
+    marginHorizontal: dimensions.viewWidth(20),
+  },
 });

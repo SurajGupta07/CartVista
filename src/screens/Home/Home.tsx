@@ -1,11 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BaseLayout, Header, SVGImage, SearchBar } from '../../components';
+import {
+  BaseLayout,
+  Card,
+  Header,
+  SVGImage,
+  SearchBar,
+} from '../../components';
 import { useProduct } from '../../contexts/ProductContext';
 import { theme } from '../../themes';
 import { styles } from './styles';
 import { THome } from './types';
-import { Text, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import { APP_IMAGES } from '../../types/imageMapper';
 import dimensions from '../../utils/dimensions';
 
@@ -47,6 +53,24 @@ const Home: React.FC<THome> = () => {
             />
           </View>
         </View>
+      </View>
+      <View style={styles.listContainer}>
+        <FlatList
+          data={products}
+          keyExtractor={item => item.id}
+          initialNumToRender={5}
+          windowSize={10}
+          maxToRenderPerBatch={10}
+          updateCellsBatchingPeriod={30}
+          horizontal={true}
+          renderItem={({ item }) => (
+            <Card
+              title={item.title}
+              price={item.price}
+              thumbnail={item.thumbnail}
+            />
+          )}
+        />
       </View>
     </BaseLayout>
   );

@@ -1,5 +1,5 @@
 export interface IImage {
-  assetSrc: any;
+  assetSrc?: any;
   width?: number;
   height?: number;
   fill?: string;
