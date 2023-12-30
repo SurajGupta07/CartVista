@@ -1,5 +1,5 @@
 export interface IHeaderProps {
-  title: string;
+  title?: string;
   onPress?: () => void;
   headerColor?: string;
   titleColor?: string;

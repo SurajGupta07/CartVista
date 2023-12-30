@@ -1,15 +1,15 @@
 import React from 'react';
 import { Pressable, Text, View } from 'react-native';
-
+import { theme } from '../../themes';
 import { APP_IMAGES } from '../../types/imageMapper';
 import dimensions from '../../utils/dimensions';
 import { SVGImage } from '../SVGImage/SvgImage';
 import { styles } from './styles';
 import { IHeaderProps } from './types';
-import { theme } from '../../themes';
 
 export const Header: React.FC<IHeaderProps> = props => {
   const { title, onPress, headerColor, titleColor } = props;
+
   return (
     <View style={[styles.cardContainer, { backgroundColor: headerColor }]}>
       {onPress && (
