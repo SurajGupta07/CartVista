@@ -12,4 +12,8 @@ export default {
   address: 'Green Way 3000, Sylhet',
   within: 'WITHIN',
   hour: '1 Hour',
+  recommended: 'Recommended',
+  discount: '50% OFF',
+  get: 'GET',
+  order: 'On first 03 order',
 };

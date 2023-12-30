@@ -15,11 +15,16 @@ import { APP_IMAGES } from '../../types/imageMapper';
 import dimensions from '../../utils/dimensions';
 import { styles } from './styles';
 import { THome } from './types';
+import { HorizontalCard } from '../../components/HorizontalCard/HorizontalCard';
 
 const Home: React.FC<THome> = () => {
   const { t } = useTranslation();
   const { products } = useProduct();
   console.log(JSON.stringify(products, null, 2));
+
+  const thumbnails = products
+    ?.filter((_, index) => index < 5)
+    .map(product => product.thumbnail);
 
   return (
     <BaseLayout style={styles.container}>
@@ -55,15 +60,25 @@ const Home: React.FC<THome> = () => {
           </View>
         </View>
       </View>
-      <View style={styles.listContainer}>
-        <FlatGrid
-          keyExtractor={item => item.id}
-          showsVerticalScrollIndicator={false}
-          itemDimension={160}
-          spacing={15}
-          data={products || []}
-          renderItem={({ item }) => <Card item={item} />}
-        />
+      <View style={styles.products}>
+        {products !== null && (
+          <HorizontalCard
+            thumbnails={thumbnails}
+            height={dimensions.viewHeight(68)}
+            width={dimensions.viewWidth(68)}
+          />
+        )}
+        <Text style={styles.listTitle}>{t('common:recommended')}</Text>
+        <View style={styles.listContainer}>
+          <FlatGrid
+            keyExtractor={item => item.id}
+            showsVerticalScrollIndicator={false}
+            itemDimension={160}
+            spacing={15}
+            data={products || []}
+            renderItem={({ item }) => <Card item={item} />}
+          />
+        </View>
       </View>
     </BaseLayout>
   );

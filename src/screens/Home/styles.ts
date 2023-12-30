@@ -7,6 +7,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.palette.white.dark,
   },
+  products: {
+    marginHorizontal: dimensions.viewWidth(20),
+    marginTop: dimensions.viewHeight(27),
+  },
   searchBar: {
     backgroundColor: theme.palette.secondary.light,
     paddingHorizontal: dimensions.viewWidth(20),
@@ -32,6 +36,11 @@ export const styles = StyleSheet.create({
     color: theme.palette.white.dark,
     marginRight: dimensions.viewWidth(8),
   },
+  listTitle: {
+    paddingTop: dimensions.viewHeight(27),
+    fontSize: theme.typography.fontSize.headingBold,
+    fontFamily: theme.typography.fontFamily[400],
+  },
   flexRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -39,7 +48,6 @@ export const styles = StyleSheet.create({
   listContainer: {
     marginTop: dimensions.viewHeight(12),
     marginBottom: dimensions.viewHeight(34),
-    marginHorizontal: dimensions.viewWidth(20),
   },
   productList: {
     flexDirection: 'row',
