@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Text, View } from 'react-native';
+import { FlatGrid } from 'react-native-super-grid';
 import {
   BaseLayout,
   Card,
@@ -9,11 +11,10 @@ import {
 } from '../../components';
 import { useProduct } from '../../contexts/ProductContext';
 import { theme } from '../../themes';
-import { styles } from './styles';
-import { THome } from './types';
-import { FlatList, Text, View } from 'react-native';
 import { APP_IMAGES } from '../../types/imageMapper';
 import dimensions from '../../utils/dimensions';
+import { styles } from './styles';
+import { THome } from './types';
 
 const Home: React.FC<THome> = () => {
   const { t } = useTranslation();
@@ -55,21 +56,13 @@ const Home: React.FC<THome> = () => {
         </View>
       </View>
       <View style={styles.listContainer}>
-        <FlatList
-          data={products}
+        <FlatGrid
           keyExtractor={item => item.id}
-          initialNumToRender={5}
-          windowSize={10}
-          maxToRenderPerBatch={10}
-          updateCellsBatchingPeriod={30}
-          horizontal={true}
-          renderItem={({ item }) => (
-            <Card
-              title={item.title}
-              price={item.price}
-              thumbnail={item.thumbnail}
-            />
-          )}
+          showsVerticalScrollIndicator={false}
+          itemDimension={160}
+          spacing={15}
+          data={products || []}
+          renderItem={({ item }) => <Card item={item} />}
         />
       </View>
     </BaseLayout>

@@ -37,7 +37,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   listContainer: {
-    marginVertical: dimensions.viewHeight(12),
+    marginTop: dimensions.viewHeight(12),
+    marginBottom: dimensions.viewHeight(34),
     marginHorizontal: dimensions.viewWidth(20),
+  },
+  productList: {
+    flexDirection: 'row',
   },
 });
