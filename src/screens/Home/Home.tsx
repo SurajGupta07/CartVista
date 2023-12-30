@@ -1,6 +1,7 @@
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 import {
   BaseLayout,
@@ -9,22 +10,28 @@ import {
   SVGImage,
   SearchBar,
 } from '../../components';
+import { HorizontalCard } from '../../components/HorizontalCard/HorizontalCard';
+import { APPROUTES } from '../../constants/enums';
 import { useProduct } from '../../contexts/ProductContext';
 import { theme } from '../../themes';
 import { APP_IMAGES } from '../../types/imageMapper';
+import { NavigationParams, Product } from '../../types/types';
 import dimensions from '../../utils/dimensions';
 import { styles } from './styles';
 import { THome } from './types';
-import { HorizontalCard } from '../../components/HorizontalCard/HorizontalCard';
 
 const Home: React.FC<THome> = () => {
+  const navigation = useNavigation<NavigationProp<NavigationParams>>();
   const { t } = useTranslation();
   const { products } = useProduct();
-  console.log(JSON.stringify(products, null, 2));
 
   const thumbnails = products
     ?.filter((_, index) => index < 5)
     .map(product => product.thumbnail);
+
+  const detailsNavigator = (product: Product) => {
+    navigation.navigate(APPROUTES.DETAILS, { product });
+  };
 
   return (
     <BaseLayout style={styles.container}>
@@ -71,12 +78,16 @@ const Home: React.FC<THome> = () => {
         <Text style={styles.listTitle}>{t('common:recommended')}</Text>
         <View style={styles.listContainer}>
           <FlatGrid
-            keyExtractor={item => item.id}
+            keyExtractor={item => item.id.toString()}
             showsVerticalScrollIndicator={false}
             itemDimension={160}
             spacing={15}
             data={products || []}
-            renderItem={({ item }) => <Card item={item} />}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => detailsNavigator(item)}>
+                <Card item={item} />
+              </TouchableOpacity>
+            )}
           />
         </View>
       </View>

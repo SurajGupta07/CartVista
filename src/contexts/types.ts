@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
+import { Product } from '../types/types';
 
 export interface ProductContextType {
-  products: any[] | null;
+  products: Product[] | null;
   setProducts: React.Dispatch<React.SetStateAction<any[] | null>>;
 }
 
