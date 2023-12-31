@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { useCartAction } from '../../hooks/useCartAction';
 import { theme } from '../../themes';
 import { APP_IMAGES } from '../../types/imageMapper';
 import dimensions from '../../utils/dimensions';
@@ -9,6 +10,7 @@ import { CardProps } from './types';
 
 export const Card = React.memo((props: CardProps) => {
   const item = props.item;
+  const { addToCartOnClick } = useCartAction();
   const { title, price, thumbnail, id } = item;
 
   return (
@@ -30,11 +32,13 @@ export const Card = React.memo((props: CardProps) => {
       </View>
       <View style={styles.priceContainer}>
         <Text style={styles.price}>$ {price}</Text>
-        <SVGImage
-          assetSrc={APP_IMAGES.PLUS}
-          height={dimensions.viewHeight(24)}
-          width={dimensions.viewWidth(24)}
-        />
+        <TouchableOpacity onPress={() => addToCartOnClick({ product: item })}>
+          <SVGImage
+            assetSrc={APP_IMAGES.PLUS}
+            height={dimensions.viewHeight(24)}
+            width={dimensions.viewWidth(24)}
+          />
+        </TouchableOpacity>
       </View>
       <Text style={styles.title}>{title}</Text>
     </View>

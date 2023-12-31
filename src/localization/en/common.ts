@@ -17,4 +17,5 @@ export default {
   get: 'GET',
   order: 'On first 03 order',
   off: 'OFF',
+  shopping: 'Shopping Cart',
 };

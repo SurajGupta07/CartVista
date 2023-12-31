@@ -82,7 +82,7 @@ const Home: React.FC<THome> = () => {
             showsVerticalScrollIndicator={false}
             itemDimension={160}
             spacing={15}
-            data={products || []}
+            data={products ?? []}
             renderItem={({ item }) => (
               <TouchableOpacity onPress={() => detailsNavigator(item)}>
                 <Card item={item} />
