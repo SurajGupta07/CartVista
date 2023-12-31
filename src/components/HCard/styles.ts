@@ -7,7 +7,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginBottom: dimensions.viewHeight(20),
-    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderColor: '#EBEBFB',
+    paddingBottom: dimensions.viewHeight(16),
   },
   image: {
     paddingRight: dimensions.viewWidth(26),
@@ -16,7 +18,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginTop: dimensions.viewHeight(8),
   },
   title: {
     fontSize: theme.typography.fontSize.bodyMedium,

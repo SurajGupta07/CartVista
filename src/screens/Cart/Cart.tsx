@@ -19,7 +19,7 @@ export const Cart: FC = () => {
     <BaseLayout style={styles.conatiner}>
       <View style={styles.headerContainer}>
         <Header onPress={backHandler} />
-        <Text>
+        <Text style={styles.title}>
           {t('common:shopping')} ({cart.length})
         </Text>
       </View>
