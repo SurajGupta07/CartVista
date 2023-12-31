@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { FC } from 'react';
 import { APPROUTES } from '../constants/enums';
-import { Details, Home } from '../screens';
+import { Cart, Details, Home } from '../screens';
 import { NavigationParams } from '../types/types';
 
 const Stack = createNativeStackNavigator<NavigationParams>();
@@ -18,6 +18,11 @@ export const HomeStack: FC = () => {
       <Stack.Screen
         name={APPROUTES.DETAILS}
         component={Details}
+        options={{ animation: 'slide_from_right' }}
+      />
+      <Stack.Screen
+        name={APPROUTES.CART}
+        component={Cart}
         options={{ animation: 'slide_from_right' }}
       />
     </Stack.Navigator>

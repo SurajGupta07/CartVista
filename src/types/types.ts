@@ -1,4 +1,4 @@
-import { APPROUTES } from '../constants/enums';
+import { APPROUTES, CART_ACTIONS } from '../constants/enums';
 
 export type NavigationParams = {
   [APPROUTES.HOME]: undefined;
@@ -27,3 +27,12 @@ export interface Product {
   thumbnail: string;
   images: string[];
 }
+
+export type CartAction =
+  | {
+      type: typeof CART_ACTIONS.ADD_ITEM_TO_CART;
+      payload: { product: Product };
+    }
+  | { type: typeof CART_ACTIONS.REMOVE_FROM_CART; _id: number }
+  | { type: typeof CART_ACTIONS.ADD_TO_WISHLIST; payload: { product: Product } }
+  | { type: typeof CART_ACTIONS.REMOVE_FROM_WISHLIST; _id: number };

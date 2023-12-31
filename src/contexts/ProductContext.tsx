@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import { EReqMethod } from '../constants/enums';
 import { HttpService } from '../services/http.service';
+import { Product } from '../types/types';
 import { END_POINTS } from '../utils/endpoints';
 import { ProductContextType, ProductProviderProps } from './types';
 
@@ -17,7 +18,7 @@ export const ProductContext = createContext<ProductContextType | undefined>(
 export const ProductsProvider = ({
   children,
 }: Readonly<ProductProviderProps>): JSX.Element => {
-  const [products, setProducts] = useState<any[] | null>(null);
+  const [products, setProducts] = useState<Product[] | null>(null);
 
   useEffect(() => {
     (async () => {
