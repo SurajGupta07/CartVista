@@ -16,4 +16,5 @@ export default {
   discount: '50% OFF',
   get: 'GET',
   order: 'On first 03 order',
+  off: 'OFF',
 };

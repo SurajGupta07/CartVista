@@ -5,10 +5,11 @@ import {
   useRoute,
 } from '@react-navigation/native';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Text, View } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 import Carousel from 'react-native-snap-carousel';
-import { BaseLayout, Header, SVGImage } from '../../components';
+import { BaseLayout, Button, Header, SVGImage } from '../../components';
 import { theme } from '../../themes';
 import { NavigationParams, TNavRoutes } from '../../types/types';
 import dimensions from '../../utils/dimensions';
@@ -36,6 +37,7 @@ const CarouselItem = memo(
 const Details: React.FC = () => {
   const route = useRoute<RouteProp<TNavRoutes, 'Details'>>();
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
+  const { t } = useTranslation();
   const { product } = route.params;
   const sliderWidth = dimensions.screenWidth;
   const itemWidth = dimensions.screenWidth;
@@ -69,16 +71,29 @@ const Details: React.FC = () => {
         />
       </View>
       <View style={styles.description}>
-        <View>
-          <Text>{product.price}</Text>
-          <Text>{product.discountPercentage} OFF</Text>
+        <View style={styles.flexRow}>
+          <Text style={styles.price}>$ {product.price}</Text>
+          <Text style={styles.discount}>
+            $ {product.discountPercentage} {t('common:off')}
+          </Text>
+        </View>
+        <View style={[styles.flexRow, styles.mv30]}>
+          <Button
+            title="Add To Cart"
+            onPress={() => {}}
+            buttonContainerStyle={styles.outlineBtn}
+            titleStyle={styles.outlineBtnTitle}
+          />
+          <Button
+            title="Buy Now"
+            onPress={() => {}}
+            titleStyle={styles.btnTitle}
+            buttonContainerStyle={styles.btn}
+          />
         </View>
         <View>
-          <Text>Add To Cart</Text>
-        </View>
-        <View>
-          <Text>Details</Text>
-          <Text>{product.description}</Text>
+          <Text style={styles.details}>{t('common:details')}</Text>
+          <Text style={styles.desc}>{product.description}</Text>
         </View>
       </View>
     </BaseLayout>
