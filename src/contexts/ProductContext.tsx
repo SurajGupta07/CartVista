@@ -9,6 +9,7 @@ import { EReqMethod } from '../constants/enums';
 import { HttpService } from '../services/http.service';
 import { Product } from '../types/types';
 import { END_POINTS } from '../utils/endpoints';
+import { mapProductsToQuantity } from '../utils/helper';
 import { ProductContextType, ProductProviderProps } from './types';
 
 export const ProductContext = createContext<ProductContextType | undefined>(
@@ -27,7 +28,8 @@ export const ProductsProvider = ({
           method: EReqMethod.GET,
           url: END_POINTS.products,
         });
-        setProducts(response.products);
+        const mapProducts = mapProductsToQuantity(response.products);
+        setProducts(mapProducts);
       } catch (error) {
         console.error('Error fetching data:', error);
       }

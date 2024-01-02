@@ -1,6 +1,7 @@
 export * from './BaseLayout/BaseLayout';
 export * from './Button/Button';
 export * from './Card/Card';
+export * from './Checkout/Checkout';
 export * from './ConditionRenderer/ConditionRenderer';
 export * from './HCard/HCard';
 export * from './Header/Header';

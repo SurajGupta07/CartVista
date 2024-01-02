@@ -2,18 +2,20 @@ import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FlatList, Text, View } from 'react-native';
-import { BaseLayout, HCard, Header } from '../../components';
+import { BaseLayout, Checkout, HCard, Header } from '../../components';
 import { useCart } from '../../contexts/CartContext';
 import { NavigationParams } from '../../types/types';
+import { calculateCartSubTotal } from '../../utils/helper';
 import { styles } from './styles';
 
 export const Cart: FC = () => {
   const { t } = useTranslation();
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
   const { cart } = useCart();
-  console.log(JSON.stringify(cart, null, 2));
 
   const backHandler = () => navigation.goBack();
+
+  const subTotal = calculateCartSubTotal(cart);
 
   return (
     <BaseLayout style={styles.conatiner}>
@@ -36,6 +38,7 @@ export const Cart: FC = () => {
           )}
         />
       </View>
+      <Checkout subTotal={subTotal} />
     </BaseLayout>
   );
 };

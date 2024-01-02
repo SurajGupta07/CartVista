@@ -13,6 +13,7 @@ export const useCartAction = () => {
       payload: {
         product: {
           ...product,
+          quantity: 1,
         },
       },
     });

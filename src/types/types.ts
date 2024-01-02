@@ -14,7 +14,7 @@ export type TNavRoutes = {
   Details: { product: Product };
 };
 
-export interface Product {
+export interface Product extends Quantity {
   id: number;
   title: string;
   description: string;
@@ -27,6 +27,10 @@ export interface Product {
   thumbnail: string;
   images: string[];
 }
+
+export type Quantity = {
+  quantity: number;
+};
 
 export type CartAction =
   | {

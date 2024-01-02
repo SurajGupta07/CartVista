@@ -16,7 +16,7 @@ export interface IPalette {
 export const palette: IPalette = {
   primary: {
     dark: '#F9B023',
-    medium: '#F9B023',
+    medium: '#616A7D',
     light: '#F9B023',
   },
   secondary: {

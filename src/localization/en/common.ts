@@ -18,4 +18,7 @@ export default {
   order: 'On first 03 order',
   off: 'OFF',
   shopping: 'Shopping Cart',
+  subTotal: 'Subtotal',
+  deliveryPrice: 'Delivery',
+  total: 'Total',
 };
