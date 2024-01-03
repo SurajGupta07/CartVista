@@ -1,12 +1,5 @@
-import React, {
-  createContext,
-  useContext,
-  useMemo,
-  useReducer,
-  useState,
-} from 'react';
+import React, { createContext, useContext, useMemo, useReducer } from 'react';
 import { cartReducer, initialState } from '../reducers/cart-reducer';
-import { Product } from '../types/types';
 import { CartContextType } from './types';
 
 export const CartContext = createContext<CartContextType | undefined>(
@@ -20,33 +13,15 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     cartReducer,
     initialState,
   );
-  const [favouriteList, setFavouriteList] = useState<Product[] | null>([]);
-  const [cartPrice, setCartPrice] = useState<number | undefined>(undefined);
-  const [orderId, setOrderId] = useState<string | undefined>(undefined);
 
   const contextValue = useMemo(
     () => ({
       cart,
       favourites,
-      favouriteList,
-      setFavouriteList,
+
       dispatch,
-      cartPrice,
-      setCartPrice,
-      orderId,
-      setOrderId,
     }),
-    [
-      cart,
-      favourites,
-      favouriteList,
-      setFavouriteList,
-      dispatch,
-      cartPrice,
-      setCartPrice,
-      orderId,
-      setOrderId,
-    ],
+    [cart, favourites, dispatch],
   );
 
   return (

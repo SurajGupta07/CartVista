@@ -13,11 +13,5 @@ export interface ProductProviderProps {
 export interface CartContextType {
   cart: Product[];
   favourites: Product[];
-  favouriteList: Product[] | null;
-  setFavouriteList: React.Dispatch<React.SetStateAction<Product[] | null>>;
   dispatch: React.Dispatch<CartAction>;
-  cartPrice: number | undefined;
-  setCartPrice: React.Dispatch<React.SetStateAction<number | undefined>>;
-  orderId: string | undefined;
-  setOrderId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }

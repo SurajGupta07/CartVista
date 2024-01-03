@@ -7,11 +7,17 @@ import dimensions from '../../utils/dimensions';
 import { SVGImage } from '../SVGImage/SvgImage';
 import { styles } from './styles';
 import { CardProps } from './types';
+import { useCart } from '../../contexts/CartContext';
 
 export const Card = React.memo((props: CardProps) => {
-  const item = props.item;
   const { addToCartOnClick, addToWishlist } = useCartAction();
+  const { favourites } = useCart();
+  const item = props.item;
   const { title, price, thumbnail, id } = item;
+
+  const isProductFavourite = favourites.some(
+    _product => _product.id === item.id,
+  );
 
   return (
     <View key={id} style={styles.card}>
@@ -22,7 +28,11 @@ export const Card = React.memo((props: CardProps) => {
           assetSrc={APP_IMAGES.HEART}
           height={dimensions.viewHeight(14)}
           width={dimensions.viewWidth(14)}
-          fill={theme.palette.white.medium}
+          fill={
+            isProductFavourite
+              ? theme.palette.pink.dark
+              : theme.palette.white.medium
+          }
         />
       </TouchableOpacity>
       <View style={styles.productImage}>
