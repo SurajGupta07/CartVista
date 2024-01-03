@@ -3,4 +3,5 @@ export interface IHCardProps {
   title: string;
   subtitle: string;
   quantity: number;
+  showQuantity: boolean;
 }

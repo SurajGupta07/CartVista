@@ -6,7 +6,7 @@ import dimensions from '../../utils/dimensions';
 import { styles } from './styles';
 
 export const HCard: React.FC<IHCardProps> = props => {
-  const { image, quantity, subtitle, title } = props;
+  const { image, quantity, subtitle, title, showQuantity } = props;
   return (
     <View style={styles.container}>
       <View style={styles.image}>
@@ -20,9 +20,11 @@ export const HCard: React.FC<IHCardProps> = props => {
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subTitle}>{subtitle}</Text>
       </View>
-      <View style={styles.quantity}>
-        <Text style={styles.title}>{quantity}</Text>
-      </View>
+      {showQuantity && (
+        <View style={styles.quantity}>
+          <Text style={styles.title}>{quantity}</Text>
+        </View>
+      )}
     </View>
   );
 };

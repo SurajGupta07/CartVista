@@ -9,20 +9,10 @@ export const styles = StyleSheet.create({
     paddingHorizontal: dimensions.viewWidth(4),
     backgroundColor: theme.palette.white.dark,
   },
-  headerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: dimensions.viewHeight(20),
-  },
-  title: {
-    fontSize: theme.typography.fontSize.bodyBold,
-    fontFamily: theme.typography.fontFamily[400],
-    lineHeight: dimensions.viewHeight(24),
-    color: theme.palette.black.medium,
-  },
-  cartList: {
+  list: {
     flex: 1,
     paddingHorizontal: dimensions.viewWidth(20),
     marginBottom: dimensions.viewHeight(20),
+    marginTop: dimensions.viewHeight(24),
   },
 });

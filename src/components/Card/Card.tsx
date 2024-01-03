@@ -10,12 +10,14 @@ import { CardProps } from './types';
 
 export const Card = React.memo((props: CardProps) => {
   const item = props.item;
-  const { addToCartOnClick } = useCartAction();
+  const { addToCartOnClick, addToWishlist } = useCartAction();
   const { title, price, thumbnail, id } = item;
 
   return (
     <View key={id} style={styles.card}>
-      <TouchableOpacity style={styles.fav}>
+      <TouchableOpacity
+        style={styles.fav}
+        onPress={() => addToWishlist({ product: item })}>
         <SVGImage
           assetSrc={APP_IMAGES.HEART}
           height={dimensions.viewHeight(14)}

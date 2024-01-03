@@ -18,7 +18,7 @@ export const Cart: FC = () => {
   const subTotal = calculateCartSubTotal(cart);
 
   return (
-    <BaseLayout style={styles.conatiner}>
+    <BaseLayout style={styles.container}>
       <View style={styles.headerContainer}>
         <Header onPress={backHandler} />
         <Text style={styles.title}>
@@ -34,11 +34,12 @@ export const Cart: FC = () => {
               title={item.title}
               subtitle={`$ ${item.price}`}
               quantity={1}
+              showQuantity={true}
             />
           )}
         />
       </View>
-      <Checkout subTotal={subTotal} />
+      {cart.length > 0 && <Checkout subTotal={subTotal} />}
     </BaseLayout>
   );
 };
