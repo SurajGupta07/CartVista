@@ -81,13 +81,13 @@ const Details: React.FC = () => {
           </View>
           <View style={[styles.flexRow, styles.mv30]}>
             <Button
-              title="Add To Cart"
+              title={t('common:addToCart')}
               onPress={() => addToCartOnClick({ product })}
               buttonContainerStyle={styles.outlineBtn}
               titleStyle={styles.outlineBtnTitle}
             />
             <Button
-              title="Buy Now"
+              title={t('common:buyNow')}
               onPress={() => {}}
               titleStyle={styles.btnTitle}
               buttonContainerStyle={styles.btn}

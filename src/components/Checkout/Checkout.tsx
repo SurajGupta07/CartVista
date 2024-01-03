@@ -28,7 +28,7 @@ export const Checkout: React.FC<CheckoutProps> = props => {
       </View>
 
       <Button
-        title={'Proceed To Checkout'}
+        title={t('common:proceedToCheckout')}
         titleStyle={styles.title}
         buttonContainerStyle={styles.btn}
       />

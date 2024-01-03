@@ -4,7 +4,7 @@ export default {
   home: 'Home',
   more: 'More',
   favourite: 'Favourite',
-  category: 'Category',
+  category: 'Categories',
   cart: 'Cart',
   change_language: 'Change Language',
   search: 'Search Products or store',
@@ -21,4 +21,7 @@ export default {
   subTotal: 'Subtotal',
   deliveryPrice: 'Delivery',
   total: 'Total',
+  addToCart: 'Add To Cart',
+  buyNow: 'Buy Now',
+  proceedToCheckout: 'Proceed To Checkout',
 };

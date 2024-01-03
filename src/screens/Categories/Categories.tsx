@@ -1,14 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'react-native';
-import { BaseLayout } from '../../components';
+import { BaseLayout, Header } from '../../components';
+import { styles } from './styles';
 
 const Categories: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <BaseLayout>
-      <Text>{t('common:category')}</Text>
+    <BaseLayout style={styles.container}>
+      <Header title={t('common:category')} />
     </BaseLayout>
   );
 };

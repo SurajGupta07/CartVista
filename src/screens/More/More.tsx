@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, View } from 'react-native';
-import { BaseLayout } from '../../components';
+import { BaseLayout, Header } from '../../components';
 import { theme } from '../../themes';
 import { styles } from './styles';
 
@@ -18,7 +18,8 @@ const More = () => {
   const selectedLanguageCode = i18n.language;
 
   return (
-    <BaseLayout>
+    <BaseLayout style={styles.container}>
+      <Header title="Settings" />
       <View>
         <Text style={styles.language}>
           {t('common:change_language')} ({lang})
