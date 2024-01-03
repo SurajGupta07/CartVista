@@ -11,13 +11,22 @@ import { useCart } from '../../contexts/CartContext';
 
 export const Card = React.memo((props: CardProps) => {
   const { addToCartOnClick, addToWishlist } = useCartAction();
-  const { favourites } = useCart();
+  const { favourites, cart } = useCart();
   const item = props.item;
   const { title, price, thumbnail, id } = item;
 
   const isProductFavourite = favourites.some(
     _product => _product.id === item.id,
   );
+
+  const handleAddToCart = () => {
+    const isItemInCart = cart.some(_i => _i.id === item.id);
+    if (!isItemInCart) {
+      addToCartOnClick({ product: item });
+    } else {
+      console.log('Product is already in the cart');
+    }
+  };
 
   return (
     <View key={id} style={styles.card}>
@@ -44,7 +53,7 @@ export const Card = React.memo((props: CardProps) => {
       </View>
       <View style={styles.priceContainer}>
         <Text style={styles.price}>$ {price}</Text>
-        <TouchableOpacity onPress={() => addToCartOnClick({ product: item })}>
+        <TouchableOpacity onPress={handleAddToCart}>
           <SVGImage
             assetSrc={APP_IMAGES.PLUS}
             height={dimensions.viewHeight(24)}
