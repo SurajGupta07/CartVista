@@ -64,3 +64,9 @@ User Color Palette user `src/themes/palette.ts` for reference
 ```
 Usage -> color: theme.palette.primary.dark
 ```
+
+### Product ScreenShots:
+![home](https://github.com/SurajGupta07/CartVista/assets/48823022/fdefe687-9a58-4683-9e8f-0bdb584cce7a)
+![Details](https://github.com/SurajGupta07/CartVista/assets/48823022/fa1dbd7c-d9d6-4f7c-94ed-fbb6cb9b5c01)
+![Wishlist](https://github.com/SurajGupta07/CartVista/assets/48823022/4d53e244-a8ff-4ed4-bf9d-1be49216e331)
+![Cart](https://github.com/SurajGupta07/CartVista/assets/48823022/934aca7f-ad58-4f6c-afce-dee792a5130e)
