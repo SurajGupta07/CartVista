@@ -24,4 +24,5 @@ export default {
   addToCart: 'कार्ट में डालें',
   buyNow: 'अब खरीदें',
   proceedToCheckout: 'चेकआउट करें',
+  noItems: 'कार्ट में कोई आइटम नहीं',
 };

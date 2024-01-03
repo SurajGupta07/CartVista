@@ -55,13 +55,22 @@ export const cartReducer = (
         ),
       };
     case DECREASE_PRODUCT_QUANTITY:
+      let updatedCart = state.cart.map(item =>
+        item.id === action.payload._id
+          ? { ...item, quantity: action.payload.quantity - 1 }
+          : item,
+      );
+
+      if (action.payload.quantity - 1 === 0) {
+        return {
+          ...state,
+          cart: [],
+        };
+      }
+
       return {
         ...state,
-        cart: state.cart.map(item =>
-          item.id === action.payload._id
-            ? { ...item, quantity: action.payload.quantity - 1 }
-            : item,
-        ),
+        cart: updatedCart,
       };
 
     default:

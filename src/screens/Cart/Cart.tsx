@@ -13,14 +13,16 @@ export const Cart: FC = () => {
   const { t } = useTranslation();
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
   const { cart } = useCart();
-  const { updateProductQuantity } = useCartAction();
-
+  const { updateProductQuantity, decreaseProductQuantity } = useCartAction();
   const backHandler = () => navigation.goBack();
 
   const subTotal = calculateCartSubTotal(cart);
 
   const updateQuantity = (item: Product) =>
     updateProductQuantity({ product: item });
+
+  const decreaseQuantity = (item: Product) =>
+    decreaseProductQuantity({ product: item });
 
   return (
     <BaseLayout style={styles.container}>
@@ -33,16 +35,21 @@ export const Cart: FC = () => {
       <View style={styles.cartList}>
         <FlatList
           data={cart}
-          renderItem={({ item }) => (
-            <HCard
-              image={item.thumbnail}
-              title={item.title}
-              subtitle={`$ ${item.price}`}
-              quantity={item.quantity}
-              showQuantity={true}
-              updateQuantity={() => updateQuantity(item)}
-            />
-          )}
+          renderItem={({ item }) =>
+            item.quantity > 0 ? (
+              <HCard
+                image={item.thumbnail}
+                title={item.title}
+                subtitle={`$ ${item.price}`}
+                quantity={item.quantity}
+                showQuantity={true}
+                updateQuantity={() => updateQuantity(item)}
+                decreaseQuantity={() => decreaseQuantity(item)}
+              />
+            ) : (
+              <Text style={styles.title}>{t('translations:noItems')}</Text>
+            )
+          }
         />
       </View>
       {cart.length > 0 && <Checkout subTotal={subTotal} />}

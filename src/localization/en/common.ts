@@ -24,4 +24,5 @@ export default {
   addToCart: 'Add To Cart',
   buyNow: 'Buy Now',
   proceedToCheckout: 'Proceed To Checkout',
+  noItems: 'No Items in Cart',
 };

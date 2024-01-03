@@ -42,4 +42,13 @@ export const styles = StyleSheet.create({
     paddingTop: dimensions.viewHeight(10),
     marginHorizontal: dimensions.viewWidth(10),
   },
+  remove: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: dimensions.viewWidth(10),
+    backgroundColor: theme.palette.white.medium,
+    borderRadius: dimensions.viewWidth(40),
+    paddingVertical: dimensions.viewHeight(10),
+    marginHorizontal: dimensions.viewWidth(10),
+  },
 });

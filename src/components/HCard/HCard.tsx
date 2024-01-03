@@ -6,8 +6,15 @@ import dimensions from '../../utils/dimensions';
 import { styles } from './styles';
 
 export const HCard: React.FC<IHCardProps> = props => {
-  const { image, quantity, subtitle, title, showQuantity, updateQuantity } =
-    props;
+  const {
+    image,
+    quantity,
+    subtitle,
+    title,
+    showQuantity,
+    updateQuantity,
+    decreaseQuantity,
+  } = props;
 
   return (
     <View style={styles.container}>
@@ -30,8 +37,12 @@ export const HCard: React.FC<IHCardProps> = props => {
             </Text>
           </TouchableOpacity>
           <Text style={styles.title}>{quantity}</Text>
-          <TouchableOpacity onPress={updateQuantity}>
-            <Text style={styles.icon}>-</Text>
+          <TouchableOpacity onPress={decreaseQuantity}>
+            {quantity > 1 ? (
+              <Text style={styles.icon}>-</Text>
+            ) : (
+              <Text style={styles.remove}>Remove</Text>
+            )}
           </TouchableOpacity>
         </View>
       )}

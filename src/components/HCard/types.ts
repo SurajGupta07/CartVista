@@ -5,4 +5,5 @@ export interface IHCardProps {
   quantity: number;
   showQuantity: boolean;
   updateQuantity: () => void;
+  decreaseQuantity: () => void;
 }
