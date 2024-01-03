@@ -21,6 +21,8 @@ export const cartReducer = (
     REMOVE_FROM_CART,
     ADD_TO_WISHLIST,
     REMOVE_FROM_WISHLIST,
+    UPDATE_PRODUCT_QUANTITY,
+    DECREASE_PRODUCT_QUANTITY,
   } = CART_ACTIONS;
   switch (action.type) {
     case ADD_ITEM_TO_CART:
@@ -43,6 +45,25 @@ export const cartReducer = (
         ...state,
         favourites: favourites.filter(product => product.id !== action._id),
       };
+    case UPDATE_PRODUCT_QUANTITY:
+      return {
+        ...state,
+        cart: state.cart.map(item =>
+          item.id === action.payload._id
+            ? { ...item, quantity: action.payload.quantity + 1 }
+            : item,
+        ),
+      };
+    case DECREASE_PRODUCT_QUANTITY:
+      return {
+        ...state,
+        cart: state.cart.map(item =>
+          item.id === action.payload._id
+            ? { ...item, quantity: action.payload.quantity - 1 }
+            : item,
+        ),
+      };
+
     default:
       return state;
   }

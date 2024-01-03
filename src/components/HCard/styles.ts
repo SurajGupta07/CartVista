@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   title: {
     fontSize: theme.typography.fontSize.bodyMedium,
@@ -29,5 +30,16 @@ export const styles = StyleSheet.create({
     color: theme.palette.black.medium,
     fontFamily: theme.typography.fontFamily[400],
     lineHeight: dimensions.viewHeight(20),
+  },
+  icon: {
+    height: dimensions.viewHeight(40),
+    width: dimensions.viewWidth(40),
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    backgroundColor: theme.palette.white.medium,
+    borderRadius: dimensions.viewWidth(40),
+    paddingTop: dimensions.viewHeight(10),
+    marginHorizontal: dimensions.viewWidth(10),
   },
 });

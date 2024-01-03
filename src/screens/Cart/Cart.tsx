@@ -4,18 +4,23 @@ import { useTranslation } from 'react-i18next';
 import { FlatList, Text, View } from 'react-native';
 import { BaseLayout, Checkout, HCard, Header } from '../../components';
 import { useCart } from '../../contexts/CartContext';
-import { NavigationParams } from '../../types/types';
+import { NavigationParams, Product } from '../../types/types';
 import { calculateCartSubTotal } from '../../utils/helper';
 import { styles } from './styles';
+import { useCartAction } from '../../hooks/useCartAction';
 
 export const Cart: FC = () => {
   const { t } = useTranslation();
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
   const { cart } = useCart();
+  const { updateProductQuantity } = useCartAction();
 
   const backHandler = () => navigation.goBack();
 
   const subTotal = calculateCartSubTotal(cart);
+
+  const updateQuantity = (item: Product) =>
+    updateProductQuantity({ product: item });
 
   return (
     <BaseLayout style={styles.container}>
@@ -33,8 +38,9 @@ export const Cart: FC = () => {
               image={item.thumbnail}
               title={item.title}
               subtitle={`$ ${item.price}`}
-              quantity={1}
+              quantity={item.quantity}
               showQuantity={true}
+              updateQuantity={() => updateQuantity(item)}
             />
           )}
         />

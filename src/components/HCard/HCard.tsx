@@ -1,12 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { IHCardProps } from './types';
 import { SVGImage } from '../SVGImage/SvgImage';
 import dimensions from '../../utils/dimensions';
 import { styles } from './styles';
 
 export const HCard: React.FC<IHCardProps> = props => {
-  const { image, quantity, subtitle, title, showQuantity } = props;
+  const { image, quantity, subtitle, title, showQuantity, updateQuantity } =
+    props;
+
   return (
     <View style={styles.container}>
       <View style={styles.image}>
@@ -22,7 +24,15 @@ export const HCard: React.FC<IHCardProps> = props => {
       </View>
       {showQuantity && (
         <View style={styles.quantity}>
+          <TouchableOpacity>
+            <Text style={styles.icon} onPress={updateQuantity}>
+              +
+            </Text>
+          </TouchableOpacity>
           <Text style={styles.title}>{quantity}</Text>
+          <TouchableOpacity onPress={updateQuantity}>
+            <Text style={styles.icon}>-</Text>
+          </TouchableOpacity>
         </View>
       )}
     </View>

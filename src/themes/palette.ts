@@ -42,7 +42,7 @@ export const palette: IPalette = {
   },
   stale: {
     dark: '#F8F7FB',
-    medium: '#F8F7FB',
+    medium: '#130F26',
     light: '#F8F7FB',
   },
   pink: {

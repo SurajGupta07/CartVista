@@ -39,4 +39,15 @@ export type CartAction =
     }
   | { type: typeof CART_ACTIONS.REMOVE_FROM_CART; _id: number }
   | { type: typeof CART_ACTIONS.ADD_TO_WISHLIST; payload: { product: Product } }
-  | { type: typeof CART_ACTIONS.REMOVE_FROM_WISHLIST; _id: number };
+  | { type: typeof CART_ACTIONS.REMOVE_FROM_WISHLIST; _id: number }
+  | {
+      type: typeof CART_ACTIONS.UPDATE_PRODUCT_QUANTITY;
+      payload: { _id: number; quantity: number };
+    }
+  | {
+      type: typeof CART_ACTIONS.DECREASE_PRODUCT_QUANTITY;
+      payload: {
+        _id: number;
+        quantity: number;
+      };
+    };
